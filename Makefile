@@ -24,7 +24,7 @@ install-poetry: ## install or update poetry
 		poetry self update ; \
 	else \
 		echo 'Install poetry' ; \
-		pip3 install -U poertry ; \
+		pip3 install -U poetry ; \
 	fi
 
 install: check-poetry ## install python-poetry_publish via poetry
