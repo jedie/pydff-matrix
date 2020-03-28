@@ -1,3 +1,5 @@
+include .env
+
 SHELL := /bin/bash
 MAX_LINE_LENGTH := 119
 POETRY_VERSION := $(shell poetry --version 2>/dev/null)
@@ -27,3 +29,14 @@ install-poetry: ## install or update poetry
 
 install: check-poetry ## install python-poetry_publish via poetry
 	poetry install
+
+generate-config: check-poetry ## generate config from template "homesserver.yaml"
+	poetry run python3 -m synapse.app.homeserver \
+		--server-name ${SYNAPSE_SERVER_NAME} \
+		--config-path homeserver.yaml \
+		--generate-config \
+		--report-stats=${SYNAPSE_REPORT_STATS}
+
+start-server: check-poetry ## start synapse server
+	poetry run python3 -m synapse.app.homeserver \
+		--config-path homeserver.yaml

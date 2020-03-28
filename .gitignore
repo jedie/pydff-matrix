@@ -1,1 +1,11 @@
+# User settings:
+.env
+
+# Synapse:
+media_store
+*.config
+*.key
+homeserver.*
+
+# PyCharm:
 .idea
