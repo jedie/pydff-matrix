@@ -5,7 +5,7 @@ MAX_LINE_LENGTH := 119
 POETRY_VERSION := $(shell poetry --version 2>/dev/null)
 
 help: ## List all commands
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9 -]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9 -]+:.*?## / {printf "\033[36m%-25s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 check-poetry:
 	@if [[ "${POETRY_VERSION}" == *"Poetry"* ]] ; \
@@ -40,3 +40,6 @@ generate-config: check-poetry ## generate config from template "homesserver.yaml
 start-server: check-poetry ## start synapse server
 	poetry run python3 -m synapse.app.homeserver \
 		--config-path homeserver.yaml
+
+register-new-matrix-user: check-poetry ## register a new user
+	poetry run register_new_matrix_user -c homeserver.yaml http://localhost:8008
