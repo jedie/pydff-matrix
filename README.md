@@ -15,7 +15,18 @@ call this:
 
     make install-poetry
     make install
+    make generate-config
+    make start-server
 
+
+Just all `make` to see all existing commands, e.g.:
+
+    $ make
+    help                 List all commands
+    install-poetry       install or update poetry
+    install              install python-poetry_publish via poetry
+    generate-config      generate config from template "homesserver.yaml"
+    start-server         start synapse server
 
 
 ## links
