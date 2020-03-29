@@ -6,7 +6,8 @@ authors = ["JensDiemer <git@jensdiemer.de>"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
-matrix-synapse = "^1.12.0"
+matrix-synapse = "*"
+certbot = "*"
 
 [tool.poetry.dev-dependencies]
 

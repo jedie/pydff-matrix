@@ -7,5 +7,16 @@ media_store
 *.key
 homeserver.*
 
+# Let's encrypt
+accounts
+archive
+csr
+keys
+live
+renewal
+renewal-hooks
+letsencrypt.log
+letsencrypt.log.*
+
 # PyCharm:
 .idea

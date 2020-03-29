@@ -43,3 +43,10 @@ start-server: check-poetry ## start synapse server
 
 register-new-matrix-user: check-poetry ## register a new user
 	poetry run register_new_matrix_user -c homeserver.yaml http://localhost:8008
+
+certbot: check-poetry ## request Let's encrypt certificates
+	poetry run certbot certonly -d ${SYNAPSE_SERVER_NAME} \
+		-m webmaster@${SYNAPSE_SERVER_NAME} \
+		--standalone \
+		--config-dir=. --work-dir=. --logs-dir=. \
+		--http-01-port=8008 --https-port=8448
