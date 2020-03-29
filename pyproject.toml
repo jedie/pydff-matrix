@@ -8,6 +8,14 @@ authors = ["JensDiemer <git@jensdiemer.de>"]
 python = "^3.6"
 matrix-synapse = "*"
 certbot = "*"
+python-env-loader = "*"
+
+# https://github.com/poljar/matrix-nio
+# nio without end-to-end encryption support:
+matrix-nio = "*"
+
+# For e2ee support, python-olm is needed which requires the libolm C library (version 3.x):
+#matrix-nio = { version = "*", extras = ["e2e"] }
 
 [tool.poetry.dev-dependencies]
 

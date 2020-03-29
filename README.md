@@ -10,6 +10,12 @@ Create `.env` file, e.g.:
 
     SYNAPSE_SERVER_NAME=my.matrix.host
     SYNAPSE_REPORT_STATS=no
+    
+Add this to `.env` for `nio` client tests:
+
+    ADMIN_USER_NAME=<username>
+    ADMIN_USER_PASSWORD=<password>
+  
   
 install poetry:
 
